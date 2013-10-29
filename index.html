@@ -228,39 +228,66 @@
     </script>
  <script type="text/javascript">
     $(document).ready(function(){
-    
-    /*
-        ------------------------------------------------------
-        Wrap '<a>...</a>' HTML tags around the '<img>' element
-        ------------------------------------------------------
-    */
+     
+      //判断是否是移动端
+      var isMobile = {  
+        Android: function() {  
+            return navigator.userAgent.match(/Android/i) ? true : false;  
+        },  
+        BlackBerry: function() {  
+            return navigator.userAgent.match(/BlackBerry/i) ? true : false;  
+        },  
+        iOS: function() {  
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false;  
+        },  
+        Windows: function() {  
+            return navigator.userAgent.match(/IEMobile/i) ? true : false;  
+        },  
+        any: function() {  
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());  
+        }  
+      };  
+      if( isMobile.any() )   
+      {  
+          $('#contact').hide();                         
+      } else {
+         /*
+          ------------------------------------------------------
+          Wrap '<a>...</a>' HTML tags around the '<img>' element
+          ------------------------------------------------------
+        */
         $('div.portfolio img').each(function(){
             $(this).wrap('<a href="'  + $(this).attr('src').replace('_thumb', '') +
                           '" title="' + this.alt +
                           '" rel=lightbox_show></a>'); 
         }); 
-        
-    /*
-        ---------------------------
-        Call the slimbox() function
-        ---------------------------
-    */
+          
+        /*
+            ---------------------------
+            Call the slimbox() function
+            ---------------------------
+        */
         $("a[rel^='lightbox']").slimbox({/* Put custom options here */}, 
             function(el) {
                 return [el.href, el.title];
             },
- 
             function(el) { 
                 return (this == el) || ((this.rel.length > 8) && (this.rel == el.rel)); 
             }
         ); 
+      }
+
     })  
+
+
+
     </script>
+<div id="analytics" style="display:none;"> 
 <script type="text/javascript">
 var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9ab03f28d7a20e5ef010417bfc37b065' type='text/javascript'%3E%3C/script%3E"));
 </script>
-
+</div>
   </body>
 
 </html>
