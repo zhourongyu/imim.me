@@ -18,26 +18,8 @@
   </head>
 
   <body>
-
-
-    <!-- Side Menu -->
-<!--     <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="icon-reorder"></i></a>
-    <div id="sidebar-wrapper">
-      <ul class="sidebar-nav">
-        <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i class="icon-remove"></i></a>
-        <li class="sidebar-brand"><a href="http://startbootstrap.com">Start Bootstrap</a></li>
-        <li><a href="#top">Home</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div> -->
-    <!-- /Side Menu -->
-  
     <!-- Full Page Image Header Area -->
     <div id="top" class="header">
-
 
       <div class="vert-text">
         <div class="logo-wrapper" style="display: inline-block;">
@@ -190,104 +172,102 @@
     </footer>
     <!-- /Footer -->
 
-  <!-- Bootstrap core JavaScript -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script type="text/javascript" src="js/slimbox2.js"></script>
-  <!-- Custom JavaScript for the Side Menu - Put in a custom JS file if you want to clean this up -->
-  <script>
-      $("#menu-close").click(function(e) {
-          e.preventDefault();
-          $("#sidebar-wrapper").toggleClass("active");
-      });
-  </script>
-  <script>
-      $("#menu-toggle").click(function(e) {
-          e.preventDefault();
-          $("#sidebar-wrapper").toggleClass("active");
-      });
-  </script>
-  <script>
-    $(function() {
-        $('a[href*=#]:not([href=#])').click(function() {
-          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
-              || location.hostname == this.hostname) {
-
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-            if (target.length) {
-              $('html,body').animate({
-                scrollTop: target.offset().top
-              }, 1000);
-              return false;
-            }
-          }
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/slimbox2.js"></script>
+    <!-- Custom JavaScript for the Side Menu - Put in a custom JS file if you want to clean this up -->
+    <script>
+        $("#menu-close").click(function(e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
         });
-      });
     </script>
- <script type="text/javascript">
-    $(document).ready(function(){
-     
-      //判断是否是移动端
-      var isMobile = {  
-        Android: function() {  
-            return navigator.userAgent.match(/Android/i) ? true : false;  
-        },  
-        BlackBerry: function() {  
-            return navigator.userAgent.match(/BlackBerry/i) ? true : false;  
-        },  
-        iOS: function() {  
-            return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false;  
-        },  
-        Windows: function() {  
-            return navigator.userAgent.match(/IEMobile/i) ? true : false;  
-        },  
-        any: function() {  
-            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());  
-        }  
-      };  
-      if( isMobile.any() )   
-      {  
-          $('#contact').hide();                         
-      } else {
-         /*
-          ------------------------------------------------------
-          Wrap '<a>...</a>' HTML tags around the '<img>' element
-          ------------------------------------------------------
-        */
-        $('div.portfolio img').each(function(){
-            $(this).wrap('<a href="'  + $(this).attr('src').replace('_thumb', '') +
-                          '" title="' + this.alt +
-                          '" rel=lightbox_show></a>'); 
-        }); 
-          
-        /*
-            ---------------------------
-            Call the slimbox() function
-            ---------------------------
-        */
-        $("a[rel^='lightbox']").slimbox({/* Put custom options here */}, 
-            function(el) {
-                return [el.href, el.title];
-            },
-            function(el) { 
-                return (this == el) || ((this.rel.length > 8) && (this.rel == el.rel)); 
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+    </script>
+    <script>
+      $(function() {
+          $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+                || location.hostname == this.hostname) {
+
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+              if (target.length) {
+                $('html,body').animate({
+                  scrollTop: target.offset().top
+                }, 1000);
+                return false;
+              }
             }
-        ); 
-      }
+          });
+        });
+      </script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+       
+        //优化移动端显示
+        var isMobile = {  
+          Android: function() {  
+              return navigator.userAgent.match(/Android/i) ? true : false;  
+          },  
+          BlackBerry: function() {  
+              return navigator.userAgent.match(/BlackBerry/i) ? true : false;  
+          },  
+          iOS: function() {  
+              return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false;  
+          },  
+          Windows: function() {  
+              return navigator.userAgent.match(/IEMobile/i) ? true : false;  
+          },  
+          any: function() {  
+              return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());  
+          }  
+        };  
+        if( isMobile.any() )   
+        {  
+            $('#contact').hide();                         
+        } else {
+           /*
+            ------------------------------------------------------
+            Wrap '<a>...</a>' HTML tags around the '<img>' element
+            ------------------------------------------------------
+          */
+          $('div.portfolio img').each(function(){
+              $(this).wrap('<a href="'  + $(this).attr('src').replace('_thumb', '') +
+                            '" title="' + this.alt +
+                            '" rel=lightbox_show></a>'); 
+          }); 
+            
+          /*
+              ---------------------------
+              Call the slimbox() function
+              ---------------------------
+          */
+          $("a[rel^='lightbox']").slimbox({/* Put custom options here */}, 
+              function(el) {
+                  return [el.href, el.title];
+              },
+              function(el) { 
+                  return (this == el) || ((this.rel.length > 8) && (this.rel == el.rel)); 
+              }
+          ); 
+        }
 
-    })  
-
-
-
-    </script>
-<div id="analytics" style="display:none;"> 
-<script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9ab03f28d7a20e5ef010417bfc37b065' type='text/javascript'%3E%3C/script%3E"));
-</script>
-</div>
+      })  
+      </script>
+    <!-- 统计代码 -->
+    <div id="analytics" style="display:none;"> 
+      <script type="text/javascript">
+      var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+      document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9ab03f28d7a20e5ef010417bfc37b065' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+    </div>
   </body>
 
 </html>
