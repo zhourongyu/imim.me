@@ -89,7 +89,7 @@
     <!-- /Services -->
 
     <!-- Callout -->
-    <div class="callout">
+    <div class="callout" id="callout">
       <div class="vert-text">
         <h1>Some Fresh Photography</h1>
       </div>
@@ -230,7 +230,8 @@
         };  
         if( isMobile.any() )   
         {  
-            $('#contact').hide();                         
+            $('#contact').hide();     
+            $('#callout h1').css("font-size","10px")                    
         } else {
            /*
             ------------------------------------------------------
