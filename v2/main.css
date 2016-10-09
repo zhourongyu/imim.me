@@ -76,7 +76,7 @@ body {
 #main_content {
     z-index: 2;
     position: relative;
-    display: inline-block;
+    /*display: inline-block;*/
 
     /* Vertical center */
     top: 50%;
@@ -134,4 +134,7 @@ body {
 }
 #footer a:last-child {
     float: right;
+}
+.logo-wrapper {
+    display: inline-block;
 }
