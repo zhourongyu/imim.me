@@ -1,263 +1,198 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Cache-Control" content="max-age=7200" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="山荣的个人主页">
-    <meta name="author" content="山荣">
-    <link rel="shortcut icon" href="favicon.ico">
-    <title>山荣</title>
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta name="keywords" content="山荣, snowboard, photograph">
+  <meta name="description" content="山荣的个人主页">
+  <meta name="author" content="i@imim.me">
+  <title>山荣的个人主页</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
 
-    <!-- Add custom CSS here -->
-    <link href="css/stylish-portfolio.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0; padding: 0;
+    }
 
-  </head>
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
 
-  <body>
-    <!-- Full Page Image Header Area -->
-    <div id="top" class="header">
+    #container {
+      overflow: hidden;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+    }
 
-      <div class="vert-text">
+    #background_video {
+      position: absolute;
+
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+
+      object-fit: cover;
+      height: 100%; width: 100%;
+    }
+
+    #video_cover {
+      position: absolute;
+
+      width: 100%; height: 100%;
+
+      background: url('video_cover.jpeg') no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    #video_controls {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    #play img {
+      width: 100px;
+    }
+    #pause img {
+      width: 90px;
+    }
+    #pause {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      #video_controls {
+        display: none;
+      }
+    }
+
+    /* Demo page specific styles */
+
+    body {
+      text-align: center;
+      font-family: 'proxima-nova', Helvetica;
+    }
+
+    #container {
+      height: 100%;
+    }
+
+    #overlay {
+      position: absolute;
+      top: 0; right: 0; left: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+    }
+
+    #main_content {
+      z-index: 2;
+      position: relative;
+      display: inline-block;
+
+      /* Vertical center */
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    #main_content h1 {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: 'proxima-nova-condensed', Helvetica;
+      color: #fff;
+      font-size: 25px;
+    }
+
+    #main_content .sub_head {
+      color: rgba(255,255,255,0.5);
+      font-size: 18px;
+    }
+
+    #main_content .info {
+      color: rgba(255,255,255,0.5);
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    #links {
+      margin-top: 50px;
+    }
+
+    #links a {
+      border: 2px solid rgba(255,255,255,0.20);
+      border-radius: 61px;
+      font-size: 12px;
+      color: #FFFFFF;
+      letter-spacing: 1px;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 10px 25px;
+      display: inline-block;
+      margin-right: 15px;
+    }
+
+    #footer {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+    }
+    #footer a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      margin: 10px;
+      font-size: 12px;
+    }
+    #footer a:first-child {
+      float: left;
+    }
+    #footer a:last-child {
+      float: right;
+    }
+  </style>
+
+  <script src="https://use.typekit.net/nlq1kdt.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+</head>
+<body>
+  <div id="container">
+    <video id="background_video" loop muted></video>
+    <div id="video_cover"></div>
+    <div id="overlay"></div>
+
+    <div id="video_controls">
+      <span id="play">
+        <img src="play.png">
+      </span>
+      <span id="pause">
+        <img src="pause.png">
+      </span>
+    </div>
+
+    <section id="main_content">
+      <div id="head">
+        <div class="vert-text">
         <div class="logo-wrapper" style="display: inline-block;">
-          <img class="img-circle img-responsive loading" width="200" height="200" src="http://imim.u.qiniudn.com/rony.png" />
-        </div>
-        <h4>我是<em>山荣</em></h4>
-        <p><span class="hidden-phone">这是我的个人主页，</span>欢迎访问<a href="http://xxxx.ooo" >我的博客</a></p>
-       <!--  <a href="http://zhourongyu.me" class="btn btn-default btn-lg">Blog</a> -->
-      </div>
-    </div>
-    <!-- /Full Page Image Header Area -->
-  
-    <!-- Intro -->
-    <div id="intro" class="intro">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3 text-center">
-            <h2>一个爱折腾的八零后...</h2>
-            <p class="lead">爬山，徒步，骑车，摄影，音乐还有运动.</p>
-          </div>
+          <img class="img-circle img-responsive loading" width="150" height="150" src="v2/icon.png" />
         </div>
       </div>
-    </div>
-    <!-- /Intro -->
-  
-    <!-- Callout -->
-    <div class="callout" id="callout">
-      <div class="vert-text">
-        <h1>Some Fresh Photography</h1>
+        <h1>Zhou Rongyu</h1>
+        <p class="sub_head">Backend Developer, Photographer and Snowboarder</p>
       </div>
-    </div>
-    <!-- /Callout -->
 
-    <!-- Portfolio -->
-    <div id ="portfolio" class="portfolio">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 text-center">
-            <div class="portfolio-item">
-              <img class="img-portfolio img-responsive" alt="望京 SOHO" src="http://imim.u.qiniudn.com/portfolio-1.jpg"/>
-              <h4>望京 SOHO</h4>
-            </div>
-          </div>
-          <div class="col-md-4 text-center">
-            <div class="portfolio-item">
-              <img class="img-portfolio img-responsive" alt="水花溅起的瞬间" src="http://imim.u.qiniudn.com/portfolio-6.jpg"/>
-              <h4>水之瞬间</h4>
-            </div>
-          </div>
-          <div class="col-md-4 text-center">
-            <div class="portfolio-item">
-              <img class="img-portfolio img-responsive" alt="黄山日落" src="http://imim.u.qiniudn.com/portfolio-2.jpg"/>
-              <h4>黄山日落</h4>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 text-center">
-            <div class="portfolio-item">
-              <img class="img-portfolio img-responsive" alt="冬季华山上看日出" src="http://imim.u.qiniudn.com/portfolio-5.jpg"/>
-              <h4>华山日出</h4>
-            </div>
-          </div>
-          <div class="col-md-4 text-center">
-            <div class="portfolio-item">
-              <img class="img-portfolio img-responsive" alt="天津著名景点-天津之眼" src="http://imim.u.qiniudn.com/portfolio-3.jpg"/>
-              <h4>天津之眼</h4>
-            </div>
-          </div>
-          <div class="col-md-4 text-center">
-            <div class="portfolio-item">
-              <img class="img-portfolio img-responsive" alt="2013中秋泰山顶摄月" src="http://imim.u.qiniudn.com/portfolio-4.jpg"/>
-              <h4>月亮之上</h4>
-            </div>
-          </div>
-          <div class="col-md-4 text-center">
-            <div class="portfolio-item">
-              <img class="img-portfolio img-responsive" alt="机场" src="http://imim.u.qiniudn.com/portfolio-7.jpg"/>
-              <h4>机场</h4>
-            </div>
-          </div>
-          <div class="col-md-4 text-center">
-            <div class="portfolio-item">
-              <img class="img-portfolio img-responsive" alt="日落风车" src="http://imim.u.qiniudn.com/portfolio-8.jpg"/>
-              <h4>日落风车</h4>
-            </div>
-          </div>
-          <div class="col-md-4 text-center">
-            <div class="portfolio-item">
-              <img class="img-portfolio img-responsive" alt="角楼" src="http://imim.u.qiniudn.com/portfolio-9.jpg"/>
-              <h4>角楼</h4>
-            </div>
-          </div>
-
-        </div>
+      <div id="links">
+        <a href="https://xxxx.ooo">My Blog</a>
+        <a href="http://i.imim.me">The Photograph</a>
       </div>
-    </div>
-    <!-- /Portfolio -->
+    </section>
+  </div>
+<!--
+  <div id="footer">
 
-    <!-- Call to Action -->
-    <div class="call-to-action">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3 text-center">
-             <ul class="list-inline">
-              <li><a href="http://weibo.com/zhourongyu" class="btn btn-lg " alt="weibo"><i class="fa fa-weibo fa-2x"></i></a></li>
-<!--               <li><a href="http://twitter.com/zhourongyu" class="btn btn-lg" alt="twitter"><i class="fa fa-twitter fa-2x"></i></a></li> -->
-              <li><a href="http://instagram.com/zhourongyu" class="btn btn-lg " alt="instagram"><i class="fa fa-instagram fa-2x"></i></a></li>
-              <li><a href="http://p.imim.me" class="btn btn-lg " alt="lofter"><i class="fa fa-film fa-2x"></i></a></li>
-              <li><a href="http://github.com/zhourongyu" class="btn btn-lg " alt="github"><i class="fa fa-github-alt fa-2x"></i></a></li>
-              <li><a href="http://plus.google.com/zhourongyu" class="btn btn-lg " alt="google+"><i class="fa fa-google-plus fa-2x"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /Call to Action -->
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="zhourongyu">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-    <!-- Map -->
-    <div id="contact" class="map" style="height:500px;">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3056.5363014249133!2d116.47861185064826!3d39.99646668891494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35f1aa5aa588cfa3%3A0x3144bdc080fd0d1f!2z5pyb5Lqsc29obw!5e0!3m2!1szh-CN!2sjp!4v1471021509760" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>   
-    </div>
-    <!-- /Map -->
+  </div>-->
 
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3 text-center">
-            <div class="top-scroll">
-              <a href="#top"><i class="fa fa-arrow-circle-up scroll fa-4x"></i></a>
-            </div>
-            <hr>
-            <p>Copyright &copy; 山荣 2013. All Rights Reserved.</p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- /Footer -->
+  <script src="v2/bideo.js"></script>
+  <script src="v2/main.js"></script>
 
-    <!-- Bootstrap core JavaScript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/slimbox2.js"></script>
-    <!-- Custom JavaScript for the Side Menu - Put in a custom JS file if you want to clean this up -->
-    <script>
-        $("#menu-close").click(function(e) {
-            e.preventDefault();
-            $("#sidebar-wrapper").toggleClass("active");
-        });
-    </script>
-    <script>
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#sidebar-wrapper").toggleClass("active");
-        });
-    </script>
-    <script>
-      $(function() {
-          $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
-                || location.hostname == this.hostname) {
-
-              var target = $(this.hash);
-              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-              if (target.length) {
-                $('html,body').animate({
-                  scrollTop: target.offset().top
-                }, 1000);
-                return false;
-              }
-            }
-          });
-        });
-      </script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-       
-        //优化移动端显示
-        var isMobile = {  
-          Android: function() {  
-              return navigator.userAgent.match(/Android/i) ? true : false;  
-          },  
-          BlackBerry: function() {  
-              return navigator.userAgent.match(/BlackBerry/i) ? true : false;  
-          },  
-          iOS: function() {  
-              return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false;  
-          },  
-          Windows: function() {  
-              return navigator.userAgent.match(/IEMobile/i) ? true : false;  
-          },  
-          any: function() {  
-              return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());  
-          }  
-        };  
-        if( isMobile.any() )   
-        {  
-            $('#contact').hide();     
-            $('#callout h1').css("font-size","3.5em")                    
-        } else {
-           /*
-            ------------------------------------------------------
-            Wrap '<a>...</a>' HTML tags around the '<img>' element
-            ------------------------------------------------------
-          */
-          $('div.portfolio img').each(function(){
-              $(this).wrap('<a href="'  + $(this).attr('src').replace('_thumb', '') +
-                            '" title="' + this.alt +
-                            '" rel=lightbox_show></a>'); 
-          }); 
-            
-          /*
-              ---------------------------
-              Call the slimbox() function
-              ---------------------------
-          */
-          $("a[rel^='lightbox']").slimbox({/* Put custom options here */}, 
-              function(el) {
-                  return [el.href, el.title];
-              },
-              function(el) { 
-                  return (this == el) || ((this.rel.length > 8) && (this.rel == el.rel)); 
-              }
-          ); 
-        }
-
-      })  
-      </script>
-    <!-- 统计代码 -->
-    <div id="analytics" style="display:none;"> 
-      <script type="text/javascript">
-      var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-      document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9ab03f28d7a20e5ef010417bfc37b065' type='text/javascript'%3E%3C/script%3E"));
-      </script>
-    </div>
-  </body>
-
+</body>
 </html>
