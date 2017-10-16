@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
 	padding: 0;
 	margin: 0;
 	font-family: 'PingFang SC', 'Microsoft Yahei';
@@ -12,43 +11,16 @@ body {
 }
 
 .name-overlay {
-	background-color: rgba(228, 196, 196, 0.27);
-	background: url(http://imim.u.qiniudn.com/bg.jpg);
-	/* background-size:400px 300px; */
-	/* background-repeat:no-repeat; */
-	background-attachment: fixed;
-	background-position: center;
+	background-color: black;
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 1;
-}
-
-.name-overlay .center-block {
-	margin-top: 120px;
-	margin-left: auto;
-	margin-right: auto;
-	width: 30%;
 }
 
 .name-overlay .warning {
-	font-size: 16px;
-	text-align: center;
-	padding-top: 15px;
-	margin-left: auto;
-	margin-top: 30px;
-	border-radius: 99em;
-	margin-right: auto;
-	color: #d82525;
-	background: url(http://imim.u.qiniudn.com/dino.gif);
-    background-size: 320px 280px;
-    /* background-repeat: no-repeat; */
-    /* background-attachment: fixed; */
-    background-position: center;
-    height: 240px;
-    width: 215px;
+	font-size: 22px;
 }
 
 .name-overlay .circle-anchor {
@@ -67,40 +39,19 @@ body {
 }
 
 .name-overlay .line {
-	/*width: 30%;*/
-	/*text-align: center;*/
-	/*display: flex;*/
+	width: 100%;
+	text-align: center;
+	margin-top: 100px;
 }
 
-
-/*.name-overlay .input-name {*/
-
-
-/*margin: 10px 0 0 10px;*/
-
-
-/*padding: 10px 20px;*/
-
-
-/*width: 30%;*/
-
-
-/*outline: none;*/
-
-
-/*border: none;*/
-
-
-/*border-radius: 10px;*/
-
-
-/*font-size: 30px;*/
-
-
-/*}*/
-
-.name-overlay .pink-heart {
-	color: #f3b5b5;
+.name-overlay .input-name {
+	margin: 10px 0 0 10px;
+	padding: 10px 20px;
+	width: 30%;
+	outline: none;
+	border: none;
+	border-radius: 10px;
+	font-size: 30px;
 }
 
 .animation {
@@ -118,10 +69,10 @@ body {
 }
 
 .screen .title {
-	font-size: 32px;
+	font-size: 40px;
 	position: fixed;
 	top: 250px;
-	left: 60%;
+	left: 50%;
 	text-align: right;
 }
 
@@ -153,13 +104,13 @@ body {
 	border-radius: 50%;
 	width: 200px;
 	height: 200px;
-	border: 5px solid rgb(50, 150, 250);
+	border: 5px solid rgb(50,150,250);
 }
 
 .clock .hand {
 	height: 0px;
 	position: absolute;
-	border: 1px solid rgb(50, 150, 250);
+	border: 1px solid rgb(50,150,250);
 	top: 99px;
 	left: 99px;
 	transform-origin: 0 1px;
@@ -180,14 +131,27 @@ body {
 }
 
 .love-text {
-	/*position: fixed;*/
+	position: fixed;
 	color: #ffb0bb;
-	/*top: 250px;*/
-	margin-top: -300px;
+	top: 250px;
 	width: 100%;
 	text-align: center;
 	font-size: 50px;
-	/* font-weight: normal; */
+	font-weight: normal;
+}
+
+.thanks {
+	color: #444;
+	text-align: center;
+	font-size: 25px;
+	opacity: 0;
+}
+
+.thanks .strong {
+	color: black;
+	font-size: 30px;
+	font-weight: normal;
+	margin: 0 5px;
 }
 
 .fin-animation {
@@ -221,10 +185,9 @@ body {
 	font-size: 60px;
 	padding-top: 260px;
 	text-align: center;
-	/* opacity: 0; */
+	opacity: 0;
 	display: none;
 }
-
 
 /* Animations */
 
@@ -237,13 +200,10 @@ body {
 }
 
 @keyframes Test {
-	50% {
-		opacity: 1;
-	}
-	to {
-		opacity: 0;
-	}
+	50% { opacity: 1; }
+	to { opacity: 0; }
 }
+
 
 .screen-in {
 	animation-name: ScreenIn;
@@ -278,7 +238,7 @@ body {
 
 .fin-animation.end-fade {
 	animation-name: EndFade;
-	animation-duration: 5s;
+	animation-duration: 12s;
 	animation-timing-function: ease;
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
@@ -295,7 +255,7 @@ body {
 
 .fin-animation.fin-fade {
 	animation-name: FinFade;
-	animation-duration: 4s;
+	animation-duration: 12s;
 	animation-timing-function: ease;
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
@@ -315,7 +275,7 @@ body {
 
 .animation .heart path {
 	stroke-dasharray: 200;
-	stroke-dashoffset: 200;
+  	stroke-dashoffset: 200;
 	animation-name: HeartDraw;
 	animation-duration: 6s;
 	animation-timing-function: ease;
@@ -339,18 +299,10 @@ body {
 }
 
 @keyframes TitleFade {
-	from {
-		opacity: 0;
-	}
-	40% {
-		opacity: 1;
-	}
-	60% {
-		opacity: 1;
-	}
-	to {
-		opacity: 1;
-	}
+	from { opacity: 0; }
+	40% { opacity: 1; }
+	60% { opacity: 1; }
+	to { opacity: 0; }
 }
 
 .animation .hand-hour-rotate {
@@ -362,12 +314,8 @@ body {
 }
 
 @keyframes HandHourRotate {
-	from {
-		transform: rotate(0);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+	from { transform: rotate(0); }
+	to { transform: rotate(360deg); }
 }
 
 .animation .hand-min-rotate {
@@ -379,27 +327,20 @@ body {
 }
 
 @keyframes HandMinRotate {
-	from {
-		transform: rotate(0);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+	from { transform: rotate(0); }
+	to { transform: rotate(360deg); }
 }
 
 .animation .plane-fly {
 	animation-name: PlaneFly;
-	animation-duration: 7s;
+	animation-duration: 8s;
 	animation-timing-function: linear;
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
 }
 
 @keyframes PlaneFly {
-	to {
-		top: -200px;
-		left: 70%;
-	}
+	to { top: -200px; left: 70%; }
 }
 
 .animation .rain-jitter {
@@ -411,39 +352,24 @@ body {
 }
 
 @keyframes RainJitter {
-	from {
-		transform: rotate(8deg);
-	}
-	49.99% {
-		transform: rotate(8deg);
-	}
-	50% {
-		transform: rotate(-8deg);
-	}
-	99.99% {
-		transform: rotate(-8deg);
-	}
-	100% {
-		transform: rotate(8deg);
-	}
+	from { transform: rotate(8deg); }
+	49.99% { transform: rotate(8deg); }
+	50% { transform: rotate(-8deg); }
+	99.99% { transform: rotate(-8deg); }
+	100% { transform: rotate(8deg); }
 }
 
 .animation .sun-leave {
 	animation-name: SunLeave;
 	animation-duration: 3s;
-	animation-timing-function: cubic-bezier(1, .27, .18, 1);
+	animation-timing-function: cubic-bezier(1,.27,.18,1);
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
 }
 
 @keyframes SunLeave {
 	from {}
-	to {
-		top: 200px;
-		left: -550px;
-		transform: scale(3, 3);
-	}
-	/* to { top: 50%; left: 10%; transform: scale(1, 1); } */
+	to { top: 500px; left: -550px; transform: scale(3, 3); }
 }
 
 .animation .sun-enter {
@@ -455,42 +381,20 @@ body {
 }
 
 @keyframes SunEnter {
-	from {
-		left: -300px;
-	}
-	to {
-		left: 20%;
-	}
+	from { left: -300px; }
+	to { left: 20%; }
 }
 
 @keyframes SunRotate {
-	from {
-		transform: rotate(0);
-	}
-	24.99% {
-		transform: rotate(0);
-	}
-	25% {
-		transform: rotate(90deg);
-	}
-	49.99% {
-		transform: rotate(90deg);
-	}
-	50% {
-		transform: rotate(180deg);
-	}
-	74.99% {
-		transform: rotate(180deg);
-	}
-	75% {
-		transform: rotate(270deg);
-	}
-	99.99% {
-		transform: rotate(270deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+	from { transform: rotate(0); }
+	24.99% { transform: rotate(0); }
+	25% { transform: rotate(90deg); }
+	49.99% { transform: rotate(90deg); }
+	50% { transform: rotate(180deg); }
+	74.99% { transform: rotate(180deg); }
+	75% { transform: rotate(270deg); }
+	99.99% { transform: rotate(270deg); }
+	to { transform: rotate(360deg); }
 }
 
 .animation .line {
@@ -510,12 +414,8 @@ body {
 }
 
 @keyframes TextShow {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
+	from { opacity: 0; }
+	to { opacity: 1; }
 }
 
 .input-breath {
@@ -526,18 +426,9 @@ body {
 }
 
 @keyframes ShadowBreath {
-	from {
-		box-shadow: 0 0 0px 0px white;
-		border-radius: 6px;
-	}
-	50% {
-		box-shadow: 0 0 50px 3px #f7aaaa;
-		border-radius: 6px;
-	}
-	to {
-		box-shadow: 0 0 0px 0px white;
-		border-radius: 6px;
-	}
+	from { box-shadow: 0 0 0px 0px white; }
+	50% { box-shadow: 0 0 50px 3px white; }
+	to { box-shadow: 0 0 0px 0px white; }
 }
 
 .input-shrink {
@@ -549,11 +440,7 @@ body {
 }
 
 @keyframes Shrink {
-	to {
-		width: 0;
-		padding: 10px 0;
-		border-radius: 0;
-	}
+	to { width: 0; padding: 10px 0; }
 }
 
 .circle-spread {
@@ -608,159 +495,4 @@ body {
 		margin-left: -1000px;
 		border-radius: 0;
 	}
-}
-
-@media only screen and (max-width: 769px) {
-	/* STYLES HERE for DEVICES with physical max-screen width of 480px */
-	.name-overlay {
-		background: url(http://imim.u.qiniudn.com/bg.jpg);
-		background-size: 720px 1080px;
-		/* background-repeat:no-repeat; */
-		background-attachment: fixed;
-		background-position: center;
-	}
-	.name-overlay .center-block {
-		width: 60%;
-	}
-	.name-overlay .warning {
-		font-size: 16px;
-	}
-	.screen .title {
-		font-size: 28px;
-		position: fixed;
-		top: 220px;
-		left: 60%;
-		text-align: right;
-	}
-	.sun {
-		position: fixed;
-		top: 150px;
-		width: 220px;
-		left: 10%;
-	}
-	.rain {
-		position: fixed;
-		top: 150px;
-		width: 200px;
-		left: 5%;
-	}
-	.clock {
-		left: 5%;
-	}
-	.heart {
-		margin-top: -20%;
-		width: 450px;
-	}
-	.love-text {
-		/*top: 230px;*/
-		font-size: 40px;
-		margin-top: -220px;
-	}
-	.fin {
-		padding-top: 200px;
-	}
-
-	.animation .sun-enter {
-		animation-name: SunEnter, SunRotate;
-		animation-duration: 3s, 2s;
-		animation-timing-function: linear, linear;
-		animation-iteration-count: 1, infinite;
-		animation-fill-mode: forwards, forwards;
-	}
-	@keyframes SunEnter {
-		from {
-			left: -300px;
-		}
-		to {
-			left: 0px;
-		}
-	}
-	.animation .sun-leave {
-		animation-name: SunLeave;
-		animation-duration: 3s;
-		animation-timing-function: cubic-bezier(1, .27, .18, 1);
-		animation-iteration-count: 1;
-		animation-fill-mode: forwards;
-	}
-	@keyframes SunLeave {
-		from {
-			left: 0px;
-		}
-		/* to { top: 50%; left: 10%; transform: scale(1, 1); } */
-		to {
-			top: 200px;
-			left: -550px;
-			transform: scale(3, 3);
-		}
-	}
-}
-
-.emoji {
-	/*position  : absolute;
-	top       : 15%;
-	left      : 50%;
-	transform : translate(-50%,-50%);*/
-	padding-top: 200px;
-	/*margin-left: auto;*/
-	/*margin-right: auto;*/
-}
-
-.emoji-breath {
-	animation-name: EmojiBreath;
-	animation-duration: 2s;
-	animation-timing-function: ease;
-	animation-iteration-count: infinite;
-}
-
-@keyframes EmojiBreath {
-	from {
-		font-size: 35px;
-		display: inline-block;
-	}
-	25% {
-		font-size: 50px;
-		display: inline-block;
-	}
-	50% {
-		font-size: 35px;
-		display: inline-block;
-	}
-	75% {
-		font-size: 50px;
-		display: inline-block;
-	}
-	to {
-		font-size: 35px;
-		display: inline-block;
-	}
-}
-
-.top-input {
-	margin-top: 10px;
-}
-
-.content {
-	display: -webkit-flex;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.msg {
-	display: flex;
-	flex-flow: nowrap;
-	justify-content: center;
-	opacity: 0;
-	padding-right: 50px;
-	font-size: 18px;
-	padding-left: 50px;
-	/* padding-top: 30px; */
-	
-}
-
-.msg .strong {
-	color: #F37B7B;
-	font-size: 18px;
-	font-weight: normal;
 }

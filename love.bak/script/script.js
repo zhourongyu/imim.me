@@ -4,37 +4,16 @@ $('.name-overlay .input-name').focus();
 
 $('.name-overlay .input-name').keypress(function(event) {
 	if(event.which == 13) {
-		$('.name-overlay .input-name').blur();		
-		check();
+		if($('.name-overlay .input-name').val() != '阳阳酱') {
+			$('.name-overlay .warning').css('color', 'red');
+			return;
+		}
+		$('.name-overlay .warning').remove();
+		$(this).removeClass('input-breath');
+		$(this).addClass('input-shrink');
+		$('.name-overlay .circle').addClass('circle-spread');
 	}
 });
-
-$( ".pink-heart" ).click(function() {
-	check();
-});
-
-function check(){
-	if($('.name-overlay .input-name').val() != '阳阳酱') {
-		$('.name-overlay .warning').removeClass('hide');
-		$('.name-overlay .warning').addClass('animated tada');
-		$('.name-overlay .input-name').val("");
-		return;
-	}
-	document.addEventListener("touchmove",function(e){
-		e.preventDefault();
-		e.stopPropagation();
-		},false);
-	$('.name-overlay .input-breath').removeClass('input-breath');
-	$('.name-overlay .glyphicon-heart').remove();
-	$('.name-overlay .input-name').blur();
-	$('.name-overlay .input-name').css("border","0px solid #000");
-	$('.name-overlay .input-name').addClass('input-shrink');
-	$('.name-overlay .circle').addClass('circle-spread');
-}
-
-$(".name-overlay .input-name").bind('input porpertychange',function(){
-	$('.name-overlay .warning').addClass('hide');
-})
 
 $('.circle').bind('webkitAnimationEnd', function() {
 	$('.name-overlay').remove();
@@ -115,16 +94,13 @@ $('.screen-6').bind('webkitAnimationEnd', function() {
 });
 
 $('.screen-6 .love-text').bind('webkitAnimationEnd', function() {
-	$('.fin').addClass('fin-animation');
-	// $('.thanks').addClass('screen-in');
+	$('.thanks').addClass('screen-in');
 });
 
-$('.fin').bind('webkitAnimationEnd', function() {
+$('.thanks').bind('webkitAnimationEnd', function() {
 	if(!flags[7]) {
 		flags = true;
-		// $('.fin').addClass('fin-animation');
-		$('.fin').removeClass('fin-animation');
-		$('.msg').addClass('screen-in');
+		$('.fin').addClass('fin-animation');
 		$('.end').addClass('fin-animation');
 	}
 });
