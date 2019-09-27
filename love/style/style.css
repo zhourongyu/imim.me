@@ -13,7 +13,7 @@ body {
 
 .name-overlay {
 	background-color: rgba(228, 196, 196, 0.27);
-	background: url(http://imim.u.qiniudn.com/bg.jpg);
+	background: url(http://static.imim.me/bg.jpg);
 	/* background-size:400px 300px; */
 	/* background-repeat:no-repeat; */
 	background-attachment: fixed;
@@ -42,7 +42,7 @@ body {
 	border-radius: 99em;
 	margin-right: auto;
 	color: #d82525;
-	background: url(http://imim.u.qiniudn.com/dino.gif);
+	background: url(http://static.imim.me/dino.gif);
     background-size: 320px 280px;
     /* background-repeat: no-repeat; */
     /* background-attachment: fixed; */
@@ -613,7 +613,7 @@ body {
 @media only screen and (max-width: 769px) {
 	/* STYLES HERE for DEVICES with physical max-screen width of 480px */
 	.name-overlay {
-		background: url(http://imim.u.qiniudn.com/bg.jpg);
+		background: url(http://static.imim.me/bg.jpg);
 		background-size: 720px 1080px;
 		/* background-repeat:no-repeat; */
 		background-attachment: fixed;
